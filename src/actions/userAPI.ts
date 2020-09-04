@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { tokenConfig } from "./transactionAPI"
 
-const baseUrl: string = "http://localhost:8000";
+const baseUrl: string = "https://financial-freedom-api.herokuapp.com/";
 
 export const registerUser = async (email: string, username: string, password: string): Promise<AxiosResponse<ApiDataType>> => {
   try {

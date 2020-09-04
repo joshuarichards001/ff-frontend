@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const baseUrl: string = "http://localhost:8000";
+const baseUrl: string = "https://financial-freedom-api.herokuapp.com";
 
 export const getTransactions = async (token: string): Promise<AxiosResponse<ApiDataType>> => {
   try {
