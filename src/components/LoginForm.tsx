@@ -38,7 +38,7 @@ export default function LoginForm({
             <h1 style={{ paddingBottom: "20px" }}>Login</h1>
           )}
           <p style={{ color: "#aaaaaa", marginBottom: "30px" }}>
-            Isn't super secure so just use some dummy info
+            Use Some Dummy Info. Test user, username-"hellotest" password-"test"
           </p>
           {showRegister ? <label>Email</label> : null}
           {showRegister ? (
