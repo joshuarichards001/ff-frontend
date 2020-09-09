@@ -38,7 +38,7 @@ export default function LoginForm({
             <h1 style={{ paddingBottom: "20px" }}>Login</h1>
           )}
           <p style={{ color: "#aaaaaa", marginBottom: "30px" }}>
-            Use Some Dummy Info. Test user, username-"hellotest" password-"test"
+            To test Login as guest otherwise register! :)
           </p>
           {showRegister ? <label>Email</label> : null}
           {showRegister ? (
