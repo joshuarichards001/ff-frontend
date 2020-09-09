@@ -4,6 +4,7 @@ import styles from "../Main.module.css";
 import Header from "./Header";
 
 interface Props {
+  loading: boolean;
   onLoginClick: (userName: string, password: string) => void | undefined;
   onRegisterClick: (
     email: string,
@@ -15,6 +16,7 @@ interface Props {
 export default function LoginForm({
   onLoginClick,
   onRegisterClick,
+  loading,
 }: Props): ReactElement {
   const [userName, setUserName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -100,6 +102,9 @@ export default function LoginForm({
           >
             Login As Guest
           </button>
+          {loading ? (
+            <p style={{ marginTop: "10px" }}>Content Is Loading...</p>
+          ) : null}
         </form>
       </div>
     </div>

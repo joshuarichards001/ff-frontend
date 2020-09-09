@@ -16,6 +16,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
   const user = useContext(UserContext);
+  const [loading, setLoading] = useState(false)
 
   user.setIsLoggedIn = setIsLoggedIn;
 
@@ -29,6 +30,7 @@ function App() {
   }, []);
 
   const onLoginClick = (userName, password) => {
+    setLoading(true);
     loginUser(userName, password)
     .then(({ data }: string | any) => {
       setToken(data.auth_token);
@@ -36,12 +38,14 @@ function App() {
       user.setIsLoggedIn(true);
     })
     .catch((err: Error) => {
+      setLoading(false);
       console.log(err)
       user.setIsLoggedIn(false);
     });
   };
 
   const onRegisterClick = (email, userName, password) => {
+    setLoading(true);
     registerUser(email, userName, password).
     then(() => {
       loginUser(userName, password)
@@ -51,6 +55,7 @@ function App() {
       user.setIsLoggedIn(true);
     })
     .catch((err: Error) => {
+      setLoading(false);
       console.log(err)
       user.setIsLoggedIn(false);
     });
@@ -61,9 +66,9 @@ function App() {
     <div>
       <BrowserRouter>
         <Route path="/" exact component={() => (
-          isLoggedIn ? <Home token={token}/> : <LoginForm onLoginClick={onLoginClick} onRegisterClick={onRegisterClick}/>
+          isLoggedIn ? <Home token={token}/> : <LoginForm onLoginClick={onLoginClick} onRegisterClick={onRegisterClick} loading={loading}/>
         )}/>
-        <Route path="/login" component={() => (<LoginForm onLoginClick={onLoginClick} onRegisterClick={onRegisterClick}/>)}/>
+        <Route path="/login" component={() => (<LoginForm onLoginClick={onLoginClick} onRegisterClick={onRegisterClick} loading={loading}/>)}/>
       </BrowserRouter>
     </div>
   );
