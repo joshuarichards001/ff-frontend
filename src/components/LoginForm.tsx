@@ -1,7 +1,5 @@
-import React, { ReactElement, useState, useContext } from "react";
-import { UserContext } from "./App";
+import React, { ReactElement, useState } from "react";
 import styles from "../Main.module.css";
-import Header from "./Header";
 
 interface Props {
   loading: boolean;
@@ -81,7 +79,11 @@ export default function LoginForm({
           <button
             className={styles.buttonStyle}
             onClick={(e) => {
-              if (!showRegister) {
+              if (
+                (!showRegister || email.length,
+                userName.length,
+                password.length === 0)
+              ) {
                 e.preventDefault();
                 setShowRegister(true);
               } else {

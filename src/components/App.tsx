@@ -46,20 +46,23 @@ function App() {
 
   const onRegisterClick = (email, userName, password) => {
     setLoading(true);
-    registerUser(email, userName, password).
-    then(() => {
+    registerUser(email, userName, password)
+    .then(() => {
       loginUser(userName, password)
-    .then(({ data }: string | any) => {
-      setToken(data.auth_token);
-      localStorage.setItem('user', data.auth_token)
-      user.setIsLoggedIn(true);
-    })
-    .catch((err: Error) => {
+      .then(({ data }: string | any) => {
+        setToken(data.auth_token);
+        localStorage.setItem('user', data.auth_token)
+        user.setIsLoggedIn(true);
+      })
+      .catch((err: Error) => {
+        setLoading(false);
+        console.log(err)
+        user.setIsLoggedIn(false);
+      });
+    }).catch((err: Error) => {
       setLoading(false);
       console.log(err)
-      user.setIsLoggedIn(false);
     });
-    })
   };
 
   return (
