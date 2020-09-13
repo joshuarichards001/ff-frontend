@@ -111,14 +111,20 @@ export default function LoginForm({
             A budgeting app that was built to develop my skills in 
             full-stack web development. It is built using:
           </p>
-          <li style={{ marginTop: "10px" }}>React</li>
-          <li>TypeScript</li>
-          <li>Custom CSS</li>
-          <li>Netlify</li>
-          <li>Python</li>
-          <li>Django</li>
-          <li>SQLite</li>
-          <li>Heroku</li>
+          <div style={{ marginTop: "10px", display: "flex" }}>
+            <div style={{ marginRight: "50px"}}>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Custom CSS</li>
+              <li>Netlify</li>
+            </div>
+            <div>
+              <li>Python</li>
+              <li>Django</li>
+              <li>SQLite</li>
+              <li>Heroku</li>
+            </div>
+          </div>
           <p style={{ marginTop: "10px" }}>
             You can either log in as guest, register yourself, or use 
             some existing users like:
