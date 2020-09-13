@@ -105,7 +105,7 @@ export default function LoginForm({
             <p style={{ marginTop: "10px" }}>Content Is Loading...</p>
           ) : null}
         </form>
-        <div className={styles.loginForm} style={{width: "360px"}}>
+        <div className={styles.loginForm} style={{width: "400px"}}>
           <h1>About</h1>
           <p style={{ marginTop: "20px" }}>
             A budgeting app that was built to develop my skills in 
@@ -123,7 +123,7 @@ export default function LoginForm({
             You can either log in as guest, register yourself, or use 
             some existing users like:
           </p>
-          <table style={{ marginTop: "20px" }}>   
+          <table style={{ marginTop: "20px", width: "100px" }}>   
             <thead>
               <tr>
                 <th>Username</th>
