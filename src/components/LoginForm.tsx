@@ -115,7 +115,7 @@ export default function LoginForm({
             <div style={{ marginRight: "50px"}}>
               <li>React</li>
               <li>TypeScript</li>
-              <li>Custom CSS</li>
+              <li>CSS</li>
               <li>Netlify</li>
             </div>
             <div>
