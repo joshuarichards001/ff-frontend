@@ -37,9 +37,6 @@ export default function LoginForm({
           ) : (
             <h1 style={{ paddingBottom: "20px" }}>Login</h1>
           )}
-          <p style={{ color: "#aaaaaa", marginBottom: "30px" }}>
-            To test, Login as guest otherwise register! :)
-          </p>
           {showRegister ? <label>Email</label> : null}
           {showRegister ? (
             <input
@@ -108,6 +105,43 @@ export default function LoginForm({
             <p style={{ marginTop: "10px" }}>Content Is Loading...</p>
           ) : null}
         </form>
+        <div className={styles.loginForm} style={{width: "360px"}}>
+          <h1>About</h1>
+          <p style={{ marginTop: "20px" }}>
+            A budgeting app that was built to develop my skills in 
+            full-stack web development. It is built using:
+          </p>
+          <li style={{ marginTop: "10px" }}>React</li>
+          <li>TypeScript</li>
+          <li>Custom CSS</li>
+          <li>Netlify</li>
+          <li>Python</li>
+          <li>Django</li>
+          <li>SQLite</li>
+          <li>Heroku</li>
+          <p style={{ marginTop: "10px" }}>
+            You can either log in as guest, register yourself, or use 
+            some existing users like:
+          </p>
+          <table style={{ marginTop: "20px" }}>   
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>user1</td>
+                <td>pass</td>
+              </tr>
+              <tr>
+                <td>user2</td>
+                <td>pass</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

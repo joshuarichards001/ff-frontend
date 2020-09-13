@@ -67,9 +67,7 @@ export default function Home({token}: Props) {
   const handleFetchTransactions: HandleFetchTransactions = () => {
     getTransactions(token)
       .then(({ data }: Transaction[] | any) => {
-        setTransactionList(data.reverse().filter(transaction => {
-          return transaction.owner_id === userId
-        }));
+        setTransactionList(data.reverse());
       })
       .catch((err: Error) => console.log(err));
   };
@@ -97,7 +95,7 @@ export default function Home({token}: Props) {
   };
 
   return (
-    <div className={styles.pageContent}>
+    <div>
       <div className={styles.header}>
         <Header
           transClick={onTransClick}
