@@ -105,13 +105,13 @@ export default function LoginForm({
             <p style={{ marginTop: "10px" }}>Content Is Loading...</p>
           ) : null}
         </form>
-        <div className={styles.loginForm} style={{width: "400px"}}>
+        <div className={styles.loginForm} style={{width: "300px"}}>
           <h1>About</h1>
           <p style={{ marginTop: "20px" }}>
             A budgeting app that was built to develop my skills in 
             full-stack web development. It is built using:
           </p>
-          <div style={{ marginTop: "10px", display: "flex" }}>
+          <div style={{ marginTop: "20px", display: "flex" }}>
             <div style={{ marginRight: "50px"}}>
               <li>React</li>
               <li>TypeScript</li>
@@ -125,7 +125,7 @@ export default function LoginForm({
               <li>Heroku</li>
             </div>
           </div>
-          <p style={{ marginTop: "10px" }}>
+          <p style={{ marginTop: "20px" }}>
             You can either log in as guest, register yourself, or use 
             some existing users like:
           </p>
