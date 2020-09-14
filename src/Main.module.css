@@ -20,11 +20,11 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-left: 90px;
+  z-index: -1;
 }
 
 .container {
   background-color: #ffffff;
-  z-index:-1;
   position: relative;
   border-radius: 10px;
   padding: 15px;
@@ -48,6 +48,7 @@ nav {
   overflow: hidden;
   background-color: #333;
   align-items: center;
+  z-index: 999;
 }
 
 .headerLogo {
