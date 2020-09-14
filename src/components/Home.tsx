@@ -102,6 +102,9 @@ export default function Home({token}: Props) {
           dataClick={onDataClick}
           budgClick={onBudgClick}
           logoutClick={onLogoutClick}
+          showTrans={showTransactions}
+          showData={showData}
+          showBudg={showBudget}
         />
       </div>
       <div className={styles.content}>
