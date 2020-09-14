@@ -107,7 +107,7 @@ export default function LoginForm({
             onFailure={onGoogleClick}
           />
           {loading ? (
-            <p style={{ marginTop: "10px" }}>Content Is Loading...</p>
+            <p style={{ marginTop: "10px" }}>Content Is Loading, this may take a minute...</p>
           ) : null}
         </form>
         <div className={styles.loginForm} style={{width: "300px"}}>
