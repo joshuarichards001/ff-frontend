@@ -23,13 +23,9 @@ export default function LoginForm({
 
   return (
     <div>
-      <div className={styles.header}>
-        <ul className={styles.headerList}>
-          <li className={styles.headerLogo}>
-            <a>Financial Freedom</a>
-          </li>
-        </ul>
-      </div>
+      <nav>
+        <li className={styles.headerLogo}>Financial Freedom</li>
+      </nav>
       <div className={styles.content}>
         <form className={styles.loginForm}>
           {showRegister ? (
