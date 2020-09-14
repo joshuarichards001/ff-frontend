@@ -1,9 +1,11 @@
 import React, { ReactElement, useState } from "react";
 import styles from "../Main.module.css";
+import GoogleLogin from 'react-google-login';
 
 interface Props {
   loading: boolean;
   onLoginClick: (userName: string, password: string) => void | undefined;
+  onGoogleClick: (response: any) => Promise<void>
   onRegisterClick: (
     email: string,
     userName: string,
@@ -14,6 +16,7 @@ interface Props {
 export default function LoginForm({
   onLoginClick,
   onRegisterClick,
+  onGoogleClick,
   loading,
 }: Props): ReactElement {
   const [userName, setUserName] = useState<string>("");
@@ -97,6 +100,12 @@ export default function LoginForm({
           >
             Login As Guest
           </button>
+          <GoogleLogin
+            clientId="551797952328-07qc03g60octqej7u462de4vbgtfkbm9.apps.googleusercontent.com"
+            buttonText="Login with Google"
+            onSuccess={onGoogleClick}
+            onFailure={onGoogleClick}
+          />
           {loading ? (
             <p style={{ marginTop: "10px" }}>Content Is Loading...</p>
           ) : null}

@@ -149,7 +149,6 @@ li a:hover {
 }
 
 .buttonStyle {
-  text-align: center;
   border-radius: 4px;
   color: black;
   font-size: 16px;
@@ -157,6 +156,9 @@ li a:hover {
   padding: 2px;
   cursor: pointer;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buttonStyle:hover {

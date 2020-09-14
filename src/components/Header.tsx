@@ -29,7 +29,6 @@ export default function Header({
         className={styles.burger}
         onClick={() => {
           setOpen(!open);
-          console.log("Open", open);
         }}
       >
         <div />
