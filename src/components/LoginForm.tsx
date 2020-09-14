@@ -131,8 +131,7 @@ export default function LoginForm({
             </div>
           </div>
           <p style={{ marginTop: "20px" }}>
-            You can either log in as guest, register yourself, or use 
-            some existing users like:
+            You can either log in as guest to test, register yourself/login with google, or use some existing dummy users like:
           </p>
           <table style={{ marginTop: "20px", width: "100px" }}>   
             <thead>
