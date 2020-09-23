@@ -76,7 +76,7 @@ nav {
   background-color: #333;
   position: absolute;
   right: -100%;
-  top: 59px;
+  top: 3.6rem;
   display: flex;
   flex-direction: column;
   transition: 850ms;
@@ -88,7 +88,7 @@ nav {
   position: absolute;
   right: 0;
   transition: 350ms;
-  top: 59px;
+  top: 3.6rem;
   display: flex;
   flex-direction: column;
 }
