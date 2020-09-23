@@ -60,8 +60,8 @@ export default function AddTransaction({ addTransaction }: Props): ReactElement 
           Expense
         </button>
         <div></div>
-        <label>Amount</label>
-        <label>Category</label>
+        <label style={{marginLeft: '4px'}}>Amount</label>
+        <label style={{marginLeft: '4px'}}>Category</label>
         <div></div>
         <input
           type="number"

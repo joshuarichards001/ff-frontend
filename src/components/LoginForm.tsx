@@ -58,7 +58,7 @@ export default function LoginForm({
             style={{ marginBottom: "40px" }}
             type="password"
           />
-          <div style={{display: "flex", justifyContent: "space-between"}}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <button
               onClick={(e) => {
                 if (!showRegister) {
@@ -93,45 +93,47 @@ export default function LoginForm({
               Register
             </button>
           </div>
-          <button
-            className={styles.buttonStyle}
-            style={{ backgroundColor: "#e0e0e0" }}
-            onClick={(e) => {
-              e.preventDefault();
-              onLoginClick("testUser", "testUserPass");
-            }}
-          >
-            Login As Guest
-          </button>
-          <GoogleLogin
-            clientId="551797952328-07qc03g60octqej7u462de4vbgtfkbm9.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <button
-                onClick={renderProps.onClick}
-                disabled={renderProps.disabled}
-                className={styles.buttonStyle}
-                style={{ backgroundColor: "#e0e0e0" }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="26"
-                  viewBox="0 0 24 24"
-                  style={{marginRight: "10px", marginBottom: "1px"}}
+          <div style={{display: 'flex', flexDirection: 'column'}}>
+            <button
+              className={styles.buttonStyle}
+              style={{ backgroundColor: "#e0e0e0" }}
+              onClick={(e) => {
+                e.preventDefault();
+                onLoginClick("testUser", "testUserPass");
+              }}
+            >
+              Login As Guest
+            </button>
+            <GoogleLogin
+              clientId="551797952328-07qc03g60octqej7u462de4vbgtfkbm9.apps.googleusercontent.com"
+              render={(renderProps) => (
+                <button
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                  className={styles.buttonStyle}
+                  style={{ backgroundColor: "#e0e0e0" }}
                 >
-                  <path
-                    d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Sign in with Google
-              </button>
-            )}
-            buttonText="Login with Google"
-            onSuccess={onGoogleClick}
-            onFailure={onGoogleClick}
-          />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    style={{ marginRight: "10px", marginBottom: "1px" }}
+                  >
+                    <path
+                      d="M7 11v2.4h3.97c-.16 1.029-1.2 3.02-3.97 3.02-2.39 0-4.34-1.979-4.34-4.42 0-2.44 1.95-4.42 4.34-4.42 1.36 0 2.27.58 2.79 1.08l1.9-1.83c-1.22-1.14-2.8-1.83-4.69-1.83-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.721-2.84 6.721-6.84 0-.46-.051-.81-.111-1.16h-6.61zm0 0 17 2h-3v3h-2v-3h-3v-2h3v-3h2v3h3v2z"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Sign in with Google
+                </button>
+              )}
+              buttonText="Login with Google"
+              onSuccess={onGoogleClick}
+              onFailure={onGoogleClick}
+            />
+          </div>
           {loading ? (
             <p style={{ marginTop: "10px" }}>
               Content Is Loading, this may take a minute...
@@ -139,25 +141,7 @@ export default function LoginForm({
           ) : null}
         </form>
         <div className={styles.loginForm} style={{ width: "300px" }}>
-          <h1>About</h1>
-          <p style={{ marginTop: "20px" }}>
-            A budgeting app that was built to develop my skills in full-stack
-            web development. It is built using:
-          </p>
-          <div style={{ marginTop: "20px", display: "flex" }}>
-            <div style={{ marginRight: "50px" }}>
-              <li>React</li>
-              <li>TypeScript</li>
-              <li>CSS</li>
-              <li>Netlify</li>
-            </div>
-            <div>
-              <li>Python</li>
-              <li>Django</li>
-              <li>SQLite</li>
-              <li>Heroku</li>
-            </div>
-          </div>
+          <h1>Info</h1>
           <p style={{ marginTop: "20px" }}>
             You can either log in as a guest, register yourself, login with
             google, or use some existing dummy users like:
