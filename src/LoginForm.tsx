@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from "react";
-import styles from "../Main.module.css";
+import styles from "./Main.module.css";
 import GoogleLogin from "react-google-login";
 
 interface Props {
@@ -26,10 +26,12 @@ export default function LoginForm({
 
   return (
     <div>
-      <nav>
-        <li className={styles.headerLogo}>Financial Freedom</li>
-      </nav>
-      <div className={styles.content}>
+      <div className={styles.headerContainer}>
+        <nav>
+          <li className={styles.headerLogo}>Financial Freedom</li>
+        </nav>
+      </div>
+      <div className={styles.contentContainer}>
         <form className={styles.loginForm}>
           {showRegister ? (
             <h1 style={{ paddingBottom: "20px" }}>Register</h1>
@@ -44,13 +46,13 @@ export default function LoginForm({
               className={styles.inputStyle}
             />
           ) : null}
-          <label>User Name</label>
+          <label className={styles.labelStyle}>User Name</label>
           <input
             value={userName}
             onChange={(e: any) => setUserName(e.target.value)}
             className={styles.inputStyle}
           />
-          <label>Password</label>
+          <label className={styles.labelStyle}>Password</label>
           <input
             value={password}
             onChange={(e: any) => setPassword(e.target.value)}
@@ -69,13 +71,13 @@ export default function LoginForm({
                 }
               }}
               className={styles.buttonStyle}
-              style={{ backgroundColor: "#e0e0e0" }}
+              style={{ backgroundColor: "#e0e0e0", flex: 1 }}
             >
               Login
             </button>
             <button
               className={styles.buttonStyle}
-              style={{ backgroundColor: "#e0e0e0" }}
+              style={{ backgroundColor: "#e0e0e0", flex: 1 }}
               onClick={(e) => {
                 if (
                   (!showRegister || email.length,
@@ -93,7 +95,7 @@ export default function LoginForm({
               Register
             </button>
           </div>
-          <div style={{display: 'flex', flexDirection: 'column'}}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <button
               className={styles.buttonStyle}
               style={{ backgroundColor: "#e0e0e0" }}
@@ -135,7 +137,7 @@ export default function LoginForm({
             />
           </div>
           {loading ? (
-            <p style={{ marginTop: "10px" }}>
+            <p style={{ marginTop: "10px", marginLeft: '6px' }}>
               Content Is Loading, this may take a minute...
             </p>
           ) : null}
