@@ -97,7 +97,7 @@ nav {
   position: absolute;
   right: 0;
   background-color:  #333;
-  min-width: 230px;
+  min-width: 180px;
   z-index: 999;
 }
 
