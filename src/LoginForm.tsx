@@ -104,7 +104,7 @@ export default function LoginForm({
                 onLoginClick("testUser", "testUserPass");
               }}
             >
-              Login As Guest
+              Login As Demo User
             </button>
             <GoogleLogin
               clientId="551797952328-07qc03g60octqej7u462de4vbgtfkbm9.apps.googleusercontent.com"
@@ -145,7 +145,7 @@ export default function LoginForm({
         <div className={styles.loginForm}>
           <h1>Info</h1>
           <p style={{ marginTop: "20px" }}>
-            You can either log in as a guest, register yourself, login with
+            You can either log in as a demo user, register yourself, login with
             google, or use some existing dummy users like:
           </p>
           <table style={{ marginTop: "20px", width: "100px" }}>
