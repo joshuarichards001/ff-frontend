@@ -22,7 +22,7 @@ body {
 
 .timeframeContainer {
   margin-top: 10px;
-  width:100%;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -99,7 +99,7 @@ nav {
 .headerContent {
   position: absolute;
   right: 0;
-  background-color:  #333;
+  background-color: #333;
   min-width: 180px;
   z-index: 999;
 }
@@ -113,7 +113,9 @@ nav {
   cursor: pointer;
 }
 
-.headerContent a:hover {background-color: #222;}
+.headerContent a:hover {
+  background-color: #222;
+}
 
 .headerDropDown:hover .dropbtn {
   background-color: #222;
@@ -125,9 +127,9 @@ nav {
   background-color: #ffffff;
   padding: 5px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
-  float: left; 
+  float: left;
   width: 33.33%;
-  border: none
+  border: none;
 }
 .timeframeButtonGroup:after {
   content: "";
@@ -206,7 +208,7 @@ nav {
 }
 
 .tableStyle {
-  overflow:hidden;
+  overflow: hidden;
   overflow-y: scroll;
   height: 380px;
   border-style: solid;
@@ -283,4 +285,49 @@ a {
 
 svg > g > g:last-child {
   pointer-events: none;
+}
+
+.cover {
+  z-index: 9998;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+
+.spinner {
+  z-index: 9999;
+  position: absolute;
+  left: 48%;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  border-style: solid;
+  border-color: black;
+  border-top-color: transparent;
+  border-width: 4px;
+  border-radius: 50%;
+  -webkit-animation: spin 0.8s linear infinite;
+  animation: spin 0.8s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

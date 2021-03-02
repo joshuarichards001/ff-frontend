@@ -30,6 +30,8 @@ export default function Home({ token }: Props) {
   const [showData, setShowData] = useState(true);
   const [showBudget, setShowBudget] = useState(true);
 
+  const [loading, setLoading] = useState(false);
+
   const onAddTransClick = (e) => {
     e.preventDefault();
     setShowAddTransactions(!showAddTransactions);
@@ -66,6 +68,7 @@ export default function Home({ token }: Props) {
 
   useEffect(() => {
     handleFetchUserData();
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -74,6 +77,7 @@ export default function Home({ token }: Props) {
 
   // Gets the users data
   const handleFetchUserData = () => {
+    setLoading(true);
     userDetails(token)
       .then(({ data }: userInfo | any) => {
         setUserId(data.id);
@@ -85,9 +89,7 @@ export default function Home({ token }: Props) {
   const handleFetchTransactions: HandleFetchTransactions = () => {
     getTransactions(token)
       .then(({ data }: Transaction[] | any) => {
-        setTransactionList(
-          data.reverse()
-        );
+        setTransactionList(data.reverse());
       })
       .catch((err: Error) => console.log(err));
   };
@@ -117,6 +119,11 @@ export default function Home({ token }: Props) {
 
   return (
     <div>
+      {loading ? (
+        <div className={styles.cover}>
+          <div className={styles.spinner} />
+        </div>
+      ) : null}
       <div className={styles.headerContainer}>
         <Header
           transClick={onTransClick}

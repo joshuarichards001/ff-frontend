@@ -33,7 +33,7 @@ export default function Footer({}: Props): ReactElement {
           />
         </svg>
       </a>
-      <a target="_blank" href="http://joshrichards.co">
+      <a target="_blank" href="http://joshrichards.dev">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
