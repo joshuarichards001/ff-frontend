@@ -68,16 +68,16 @@ export default function Home({ token }: Props) {
 
   useEffect(() => {
     handleFetchUserData();
-    setLoading(false);
   }, []);
 
   useEffect(() => {
-    if (userId !== -1) handleFetchTransactions();
+    if (userId !== -1) {
+      handleFetchTransactions();
+    }
   }, [userId]);
 
   // Gets the users data
   const handleFetchUserData = () => {
-    setLoading(true);
     userDetails(token)
       .then(({ data }: userInfo | any) => {
         setUserId(data.id);
@@ -87,9 +87,11 @@ export default function Home({ token }: Props) {
 
   // Gets a list of all transactions from API
   const handleFetchTransactions: HandleFetchTransactions = () => {
+    setLoading(true);
     getTransactions(token)
       .then(({ data }: Transaction[] | any) => {
         setTransactionList(data.reverse());
+        setLoading(false);
       })
       .catch((err: Error) => console.log(err));
   };
