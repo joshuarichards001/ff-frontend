@@ -30,7 +30,7 @@ export default function Home({ token }: Props) {
   const [showData, setShowData] = useState(true);
   const [showBudget, setShowBudget] = useState(true);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const onAddTransClick = (e) => {
     e.preventDefault();
@@ -87,7 +87,6 @@ export default function Home({ token }: Props) {
 
   // Gets a list of all transactions from API
   const handleFetchTransactions: HandleFetchTransactions = () => {
-    setLoading(true);
     getTransactions(token)
       .then(({ data }: Transaction[] | any) => {
         setTransactionList(data.reverse());
